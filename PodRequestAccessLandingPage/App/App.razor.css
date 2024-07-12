@@ -1,3 +1,37 @@
 .body {
-	background-color: var(--river-styx) !important;
+	position: relative;
+	background-color: var(--river-styx);
+	overflow: hidden;
+	height: 100vh;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: var(--river-styx) url("/images/background-image.jpg") no-repeat 60.4% 0 / cover;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		mix-blend-mode: screen;
+		filter: saturate(0%) contrast(120%) brightness(40%);
+	}
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	mix-blend-mode: multiply;
+	z-index: -1;
+}
+
+.overlay--color--river-styx {
+	background: rgb(18, 23, 37, 0.8);
+}
+
+.overlay--color--screen-glow {
+	background: rgb(84, 230, 175, 0.8);
 }

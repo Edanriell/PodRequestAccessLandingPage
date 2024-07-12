@@ -2,37 +2,54 @@
 
 <PageTitle>Pod request access</PageTitle>
 
-<section>
-	<div>
-		<h1>Publish your podcasts <span>everywhere.</span></h1>
-		<p>Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
-		<div>
+<section
+	class="request-access" >
+	<div
+		class="request-access__content" >
+		<h1
+			class="request-access__title" >
+			Publish your podcasts <span>everywhere.</span>
+		</h1>
+		<p
+			class="request-access__text" >
+			Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!
+		</p>
+		<div
+			class="partners-list request-access__partners-list" >
 			<img
 				alt="Spotify company logotype"
+				class="partners-list__spotify"
 				src="/images/svg/companies/spotify.svg" />
 			<img
 				alt="Apple podcast company logotype"
+				class="partners-list__apple"
 				src="/images/svg/companies/apple-podcast.svg" />
 			<img
 				alt="Google podcasts company logotype"
+				class="partners-list__google"
 				src="/images/svg/companies/google-podcasts.svg" />
 			<img
 				alt="Pocket casts company logotype"
+				class="partners-list__pocket"
 				src="/images/svg/companies/pocket-casts.svg" />
 		</div>
 		<form
+			class="gain-access-form request-access__gain-access-form"
 			method="POST" >
-			<div>
+			<div
+				class="gain-access-form__field" >
 				<label
 					class="visually-hidden"
 					for="email" >
 					Email address
 				</label>
 				<input
+					class="gain-access-form__input"
 					id="email"
 					placeholder="Email address"
 					type="email" />
 				<button
+					class="gain-access-form__submit-button submit_button"
 					type="submit" >
 					Request Access
 				</button>
