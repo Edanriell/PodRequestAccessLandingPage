@@ -1,7 +1,6 @@
 .body {
 	position: relative;
 	background-color: var(--river-styx);
-	overflow: hidden;
 	height: 100vh;
 	z-index: 1;
 
@@ -19,6 +18,19 @@
 		user-select: none;
 		pointer-events: none;
 	}
+
+	@media (width >= 768px) {
+		height: 100%;
+
+		&::before {
+			background: var(--river-styx) url("/images/background-image.jpg") no-repeat 60.4% 0 / cover;
+			width: 49.1rem;
+			height: 76.7rem;
+			top: 0;
+			left: unset;
+			right: 0;
+		}
+	}
 }
 
 .overlay {
@@ -31,12 +43,39 @@
 	z-index: -1;
 	user-select: none;
 	pointer-events: none;
+
+	@media (width >= 768px) {
+		width: 49.1rem;
+		height: 76.7rem;
+		top: 0;
+		left: unset;
+		right: 0;
+	}
 }
 
 .overlay--color--river-styx {
 	background: rgb(18, 23, 37, 0.8);
+
+	@media (width >= 768px) {
+		display: none;
+	}
 }
 
 .overlay--color--screen-glow {
 	background: rgb(84, 230, 175, 0.8);
+}
+
+.decorative-dots-rectangle {
+	display: none;
+
+	@media (width >= 768px) {
+		display: block;
+		/*position: absolute;*/
+		/*bottom: 0;*/
+		/*left: 3rem;*/
+		width: 23.2rem;
+		height: 10.4rem;
+		margin-left: 3rem;
+		z-index: 2;
+	}
 }
