@@ -23,13 +23,20 @@
 		height: 100%;
 
 		&::before {
-			background: var(--river-styx) url("/images/background-image.jpg") no-repeat 60.4% 0 / cover;
 			width: 49.1rem;
 			height: 76.7rem;
 			top: 0;
 			left: unset;
 			right: 0;
 			filter: saturate(0%) contrast(120%) brightness(75%);
+		}
+	}
+
+	@media (width >= 1440px) {
+		&::before {
+			top: 13rem;
+			width: 88.8rem;
+			height: 64rem;
 		}
 	}
 }
@@ -51,6 +58,12 @@
 		top: 0;
 		left: unset;
 		right: 0;
+	}
+
+	@media (width >= 1440px) {
+		top: 13rem;
+		width: 88.8rem;
+		height: 64rem;
 	}
 }
 
@@ -79,5 +92,11 @@
 		margin-left: 3rem;
 		z-index: 2;
 		margin-top: -10.4rem;
+	}
+
+	@media (width >= 1440px) {
+		margin-top: -18.2rem;
+		margin-left: auto;
+		margin-right: 0;
 	}
 }
