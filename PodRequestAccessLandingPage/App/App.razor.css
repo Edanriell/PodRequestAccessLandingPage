@@ -14,7 +14,7 @@
 		top: 0;
 		left: 0;
 		mix-blend-mode: screen;
-		filter: saturate(0%) contrast(120%) brightness(40%);
+		filter: saturate(0%) contrast(120%) brightness(45%);
 		user-select: none;
 		pointer-events: none;
 	}
@@ -29,6 +29,7 @@
 			top: 0;
 			left: unset;
 			right: 0;
+			filter: saturate(0%) contrast(120%) brightness(75%);
 		}
 	}
 }
@@ -77,5 +78,6 @@
 		height: 10.4rem;
 		margin-left: 3rem;
 		z-index: 2;
+		margin-top: -10.4rem;
 	}
 }
