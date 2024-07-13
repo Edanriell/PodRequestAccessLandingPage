@@ -3,6 +3,7 @@
 	background-color: var(--river-styx);
 	overflow: hidden;
 	height: 100vh;
+	z-index: 1;
 
 	&::before {
 		content: "";
@@ -15,6 +16,8 @@
 		left: 0;
 		mix-blend-mode: screen;
 		filter: saturate(0%) contrast(120%) brightness(40%);
+		user-select: none;
+		pointer-events: none;
 	}
 }
 
@@ -26,6 +29,8 @@
 	height: 100%;
 	mix-blend-mode: multiply;
 	z-index: -1;
+	user-select: none;
+	pointer-events: none;
 }
 
 .overlay--color--river-styx {
