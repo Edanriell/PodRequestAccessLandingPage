@@ -37,27 +37,9 @@
 				class="partners-list__pocket"
 				src="/images/svg/companies/pocket-casts.svg" />
 		</div>
-		<form
-			class="gain-access-form request-access__gain-access-form"
-			method="POST" >
-			<div
-				class="gain-access-form__field" >
-				<label
-					class="visually-hidden"
-					for="email" >
-					Email address
-				</label>
-				<input
-					class="gain-access-form__input"
-					id="email"
-					placeholder="Email address"
-					type="email" />
-				<button
-					class="gain-access-form__submit-button submit_button"
-					type="submit" >
-					Request Access
-				</button>
-			</div>
-		</form>
+		<div
+			class="request-access__gain-access-form-wrapper" >
+			<GainAccess />
+		</div>
 	</div>
 </section>
