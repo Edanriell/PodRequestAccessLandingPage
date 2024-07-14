@@ -1,4 +1,5 @@
 @using Microsoft.AspNetCore.Components.Forms
+@using PodRequestAccessLandingPage.Shared.Ui.Button
 @using static Microsoft.AspNetCore.Components.Web.RenderMode
 
 @rendermode InteractiveServer
@@ -22,11 +23,10 @@
 			id="email"
 			placeholder="Email address"
 			type="email" />
-		<button
-			class="gain-access-form__submit-button submit_button"
-			type="submit" >
+		<Button
+			Class="gain-access-form__submit-button" >
 			Request Access
-		</button>
+		</Button>
 	</div>
 	<div
 		class="gain-access-form__error-message" >

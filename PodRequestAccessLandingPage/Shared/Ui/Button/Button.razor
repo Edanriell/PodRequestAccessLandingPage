@@ -1,7 +1,10 @@
-@* @rendermode InteractiveServer *@
-
-<h3>Button</h3>
+<button
+	class="submit_button @Class"
+	type="submit" >
+	@ChildContent
+</button>
 
 @code {
-	
+	[Parameter] public RenderFragment? ChildContent { get; set; }
+	[Parameter] public string? Class { get; set; }
 }
