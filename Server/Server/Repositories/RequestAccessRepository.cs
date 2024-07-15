@@ -27,6 +27,11 @@ public class RequestAccessRepository(ApplicationDbContext context) : IRequestAcc
 
 	public async Task<IResult> CreateNewAccessRequest(CreateNewAccessRequestDto request)
 	{
+		var isEmailRegistered = await context.AccessRequests.FirstOrDefaultAsync(ar => ar.Email == request.Email);
+
+		if (isEmailRegistered is not null)
+			return TypedResults.BadRequest("This email is already registered.");
+
 		var entity = new AccessRequest
 		             {
 			             Email = request.Email
