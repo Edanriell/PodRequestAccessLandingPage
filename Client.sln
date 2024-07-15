@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\PodRequestAccessLandingPage.csproj", "{7143F94E-77F3-47C1-970A-9469F2D1405B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodRequestAccessLandingPage", "PodRequestAccessLandingPage\PodRequestAccessLandingPage.csproj", "{7143F94E-77F3-47C1-970A-9469F2D1405B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
