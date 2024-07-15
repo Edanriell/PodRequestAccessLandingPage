@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Server.Dto;
 
-public abstract record CreateNewAccessRequestDto
+public sealed record CreateNewAccessRequestDto
 {
 	[Required]
 	[EmailAddress]

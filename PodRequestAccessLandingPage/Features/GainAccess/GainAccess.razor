@@ -1,7 +1,11 @@
+@using System.Net.Mime
+@using System.Text
+@using System.Text.Json
 @using Microsoft.AspNetCore.Components.Forms
 @using PodRequestAccessLandingPage.Shared.Ui.Button
 @using static Microsoft.AspNetCore.Components.Web.RenderMode
 
+@inject HttpClient Http
 @rendermode InteractiveServer
 
 <EditForm
@@ -33,22 +37,56 @@
 		<ValidationMessage
 			For="() => Model.Email" />
 	</div>
+	@if (!string.IsNullOrEmpty(_successMessage))
+	{
+		<div
+			class="gain-access-form__success-message" >
+			@_successMessage
+		</div>
+	}
+	@if (!string.IsNullOrEmpty(_failureMessage))
+	{
+		<div
+			class="gain-access-form__error-message" >
+			@_failureMessage
+		</div>
+	}
 </EditForm>
 
 @code {
 	private EditContext? _editContext;
+	private string? _successMessage;
+	private string? _failureMessage;
 
-	[SupplyParameterFromForm] public GainAccessModel? Model { get; set; }
+	[SupplyParameterFromForm] public GainAccessRequestModel? Model { get; set; }
 
 	protected override void OnInitialized()
 	{
-		Model ??= new GainAccessModel();
+		Model ??= new GainAccessRequestModel();
 		_editContext = new EditContext(Model);
 	}
 
-	private void HandleFormSubmit()
+	private async Task HandleFormSubmit()
 	{
-		Console.WriteLine("Submitted!");
+		try
+		{
+			var gainAccessRequestJson = new StringContent(
+				JsonSerializer.Serialize(Model),
+				Encoding.UTF8,
+				MediaTypeNames.Application.Json);
+
+			using var httpResponseMessage =
+				await Http.PostAsync("/api/access-requests/new", gainAccessRequestJson);
+
+			if (httpResponseMessage.IsSuccessStatusCode)
+				_successMessage = "Your access request has been successfully submitted!";
+
+			httpResponseMessage.EnsureSuccessStatusCode();
+		}
+		catch (Exception exception)
+		{
+			_failureMessage = "There was an error submitting your request. Please try again.";
+		}
 	}
 
 }

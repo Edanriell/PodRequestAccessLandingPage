@@ -8,10 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options =>
 {
-	options.AddPolicy("AllowLocalHost",
+	options.AddPolicy("AllowLocalhost",
 		policy =>
 		{
-			policy.WithOrigins("https://localhost:7109", "http://localhost:5196").AllowAnyMethod().AllowAnyHeader();
+			policy.WithOrigins("https://localhost:7109", "http://localhost:7109").AllowAnyMethod().AllowAnyHeader();
 		});
 });
 
@@ -31,7 +31,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors("AllowLocalHost");
+app.UseCors("AllowLocalhost");
 
 app.MapEndpoints(Assembly.GetExecutingAssembly());
 

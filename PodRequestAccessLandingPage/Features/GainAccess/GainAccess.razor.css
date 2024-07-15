@@ -81,3 +81,20 @@
 		left: 3.2rem;
 	}
 }
+
+.gain-access-form__success-message {
+	font-family: var(--font-family), sans-serif;
+	font-weight: 800;
+	font-size: 1.2rem;
+	color: var(--eva-green);
+	position: absolute;
+	top: -2.2rem;
+	left: 3.1rem;
+	z-index: 3;
+
+	@media (width >= 768px) {
+		top: unset;
+		bottom: -2.2rem;
+		left: 3.2rem;
+	}
+}
