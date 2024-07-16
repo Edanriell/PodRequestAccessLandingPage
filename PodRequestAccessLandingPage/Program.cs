@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped(sp =>
 	new HttpClient
 	{
-		BaseAddress = new Uri(builder.Configuration["FrontendUrl"] ?? "https://localhost:7017/")
+		BaseAddress = new Uri(builder.Configuration["BackendApiUrl"] ?? "https://localhost:7017/")
 	});
 
 builder.Services.AddRazorComponents()
